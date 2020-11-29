@@ -1,0 +1,5 @@
+allport/node_modules
+back/node_modules
+.env
+.idea
+*.pem
