@@ -20,7 +20,7 @@ connection.query("set session character_set_client=utf8;");
 
 app.use(morgan('dev'))
 app.use(cors({
-    origin: 'http://localhost:3060',
+    origin: 'http://localhost:3000',
     credentials: true,
 }));
 app.use('/', express.static(path.join(__dirname, 'img')));

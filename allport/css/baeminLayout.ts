@@ -12,10 +12,63 @@ export const test=css`
     .baedal{
         width:50vw;
         margin:0 auto;
+        text-align:center;
+    }
+    .user-only{
+        display:block;
+        text-align:center;
+    }
+    .order-shop{
+        display:block;
+        text-align:center;
+        padding:10px 0;
+    }
+    .shop-only{
+        
+    }
+    .user-table{
+        padding-top:15px;
+        display:inline-block;
+        thead{
+            th{
+                padding-bottom:15px;
+            }
+        }
+        tbody{
+            td{
+                padding:5px 0;
+            }
+        }
+    }
+    .scroll-order{
+        p{
+            display:block;
+            text-align:center;
+            button{
+                margin-left:8px;
+                border:0;
+                outline:0;
+                background-color:inherit;
+                &:hover{
+                    transform:scale(1.2);
+                }
+            }
+        }
+        ul{
+            padding-top:20px;
+            width:70vw;
+            margin:0 auto;
+            text-align:center;
+        }
+        .order-item{
+            margin:10px 0;
+            width:70%;
+            justify-content:space-between;
+            display:inline-flex;
+        }
     }
 `;
 export const changeBtn=css`
-    width:80px;
     height:32px;
     border-radius:4px;
     position:relative;

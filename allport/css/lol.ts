@@ -9,7 +9,9 @@ export const lolHome=css`
     font-weight: normal;
     font-style: normal;
 }
-
+section{
+background: url(${baseURL+"/backgroundy.jpg"});
+}
     
 @media (min-width: 1024px) {
     .plz{

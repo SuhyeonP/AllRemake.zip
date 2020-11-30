@@ -15,7 +15,7 @@ const AllMenu=()=>{
          <Link href="/lol"><a>LOL</a></Link>
          <Link href="/"><a>귀칼</a></Link>
          <Link href="/"><a> 17 </a></Link>
-         <Link href="/"><a>Data</a></Link>
+         <a target="_blank" rel="noopener noreferrer" href="http://data.honeyhyoni.shop/">Data</a>
          <Link href="/"><a>HOME</a></Link>
         </div>
     )
