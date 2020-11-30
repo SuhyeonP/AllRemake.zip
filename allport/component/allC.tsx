@@ -13,7 +13,7 @@ const AllMenu=()=>{
          <Link href="/baedal"><a>배민</a></Link>
          <Link href="/"><a>Caf</a></Link>
          <Link href="/lol"><a>LOL</a></Link>
-         <Link href="/"><a>귀칼</a></Link>
+         <Link href="/gikal"><a>귀칼</a></Link>
          <Link href="/"><a> 17 </a></Link>
          <a target="_blank" rel="noopener noreferrer" href="http://data.honeyhyoni.shop/">Data</a>
          <Link href="/"><a>HOME</a></Link>
