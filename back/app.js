@@ -13,6 +13,7 @@ connection.connect()
 
 const lolRouter=require('./routes/lol');
 const baedalRouter=require('./routes/baedal');
+const gikalRouter=require('./routes/gikal');
 connection.query("set session character_set_connection=utf8;");
 connection.query("set session character_set_results=utf8;");
 connection.query("set session character_set_client=utf8;");
@@ -40,6 +41,7 @@ app.get('/test', (req, res) => {
     res.send('hello express');
 });
 app.use('/lol',lolRouter);
+app.use('/gikal',gikalRouter);
 app.use('/baedal',baedalRouter);
 
 app.listen(3065, () => {
