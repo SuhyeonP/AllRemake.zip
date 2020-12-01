@@ -14,6 +14,7 @@ connection.connect()
 const lolRouter=require('./routes/lol');
 const baedalRouter=require('./routes/baedal');
 const gikalRouter=require('./routes/gikal');
+const cafeRouter=require('./routes/cafe');
 connection.query("set session character_set_connection=utf8;");
 connection.query("set session character_set_results=utf8;");
 connection.query("set session character_set_client=utf8;");
@@ -43,6 +44,7 @@ app.get('/test', (req, res) => {
 app.use('/lol',lolRouter);
 app.use('/gikal',gikalRouter);
 app.use('/baedal',baedalRouter);
+app.use('/cafe',cafeRouter);
 
 app.listen(3065, () => {
     console.log('서버 실행 중!');

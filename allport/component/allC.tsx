@@ -11,7 +11,7 @@ const AllMenu=()=>{
     return(
         <div className={css(allMenu)}>
          <Link href="/baedal"><a>배민</a></Link>
-         <Link href="/"><a>Caf</a></Link>
+         <Link href="/cafe"><a>Caf</a></Link>
          <Link href="/lol"><a>LOL</a></Link>
          <Link href="/gikal"><a>귀칼</a></Link>
          <Link href="/"><a> 17 </a></Link>
