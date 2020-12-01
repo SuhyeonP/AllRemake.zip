@@ -2,7 +2,6 @@ import GikalLayout from "../../component/gikal/layout";
 import Link from "next/link";
 import AllMenu from "../../component/allC";
 import React from "react";
-import NotMobile from "../../component/gikal/notmobile";
 
 const GikalMain=()=>{
     return (
