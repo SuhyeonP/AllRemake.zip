@@ -25,12 +25,31 @@ router.get('/member/:member',async(req,res,next)=>{
 
 router.get('/goings',async(req,res,next)=>{
     const lastId=Number(req.query.lastId)
-    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE dayid>${lastId} ORDER BY dayid DESC LIMIT 3`,function(err,rows,fields){
+    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE dayid>${lastId} ORDER BY dayid ASC LIMIT 3`,function(err,rows,fields){
        if(!err){
-           return res.status(200).json(rows)
+           connection.query(`SELECT dayid FROM REACT_SVT_GOING ORDER BY dayid DESC`,function(error,row,filed){
+               if(!error){
+                   return res.status(200).json({rows,row})
+               }
+           })
        } else{
            return res.status(404).send('hi')
        }
+    })
+})
+
+router.get('/going/:gid',async(req,res,next)=>{
+    const gid=Number(req.params.gid)
+    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE id=${gid}`,function(err,rows){
+        if(!err){
+            connection.query(`SELECT * FROM REACT_SVT_IMAGE WHERE gid=${gid}`,function(error,row){
+                if(!error){
+                    return res.status(200).json({row,rows})
+                }
+            })
+        }else{
+            return res.status(404).send('error')
+        }
     })
 })
 
