@@ -528,3 +528,26 @@ export const commonCss=css`
         font-family: 'Oswald', sans-serif;
     }
 `;
+export const goings=css`
+    margin:0 auto;
+    li{
+        a{
+            display:inline-block;
+        }
+    }
+    @media(max-width:677px){
+        width:80vw;
+        margin:0 auto;
+        li{
+            display:block;
+            text-align:center;
+            padding:10px 0;
+            img{
+                width:79%;
+            }
+        }
+    }
+    @media(min-width:678px){
+    
+    }
+`;
