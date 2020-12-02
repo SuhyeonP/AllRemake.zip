@@ -1,4 +1,4 @@
-allport/node_modules
+node_modules
 back/node_modules
 .env
 .idea

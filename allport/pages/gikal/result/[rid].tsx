@@ -6,6 +6,7 @@ import GikalLayout from "../../../component/gikal/layout";
 import Link from "next/link";
 import {Breath} from "../../../css/gikal";
 import {useRouter} from "next/router";
+import NotMobile from "../../../component/gikal/notmobile";
 
 const SelectZoneGikal=(data)=>{
 
@@ -52,6 +53,7 @@ const SelectZoneGikal=(data)=>{
                     <Link href="/gikal"><a className="gobackM">돌아가기</a></Link>
                     <Link href={"/gikal/character/"+numb}><a className="gobackM">호흡 더 보기</a></Link>
                 </section>
+                <NotMobile/>
             </GikalLayout>
         </>
     )
