@@ -5,6 +5,7 @@ import axios from "axios";
 import {baseURL, gikalURL} from "../../../config/config";
 import {useRouter} from "next/router";
 import GikalLayout from "../../../component/gikal/layout";
+import NotMobile from "../../../component/gikal/notmobile";
 
 const SelectZoneGikal=(data)=>{
     const router=useRouter()
@@ -77,8 +78,8 @@ const SelectZoneGikal=(data)=>{
                             <button className="selectbu" onClick={()=>gotoS(1)}>{answer2}</button>
                         </div>
                     </div>
-
                 </section>
+                <NotMobile/>
             </GikalLayout>
         </>
     )
