@@ -13,6 +13,7 @@ const GikalMain=()=>{
                     <div className="ttb">
                         <img src="http://ahah12k.cafe24.com//ptp2/resources/img/img.png" className="g-main"/>
                         <Link href="/gikal/selector/1"><a className="gogo">검사하러가기</a></Link>
+                        <NotMobile/>
                     </div>
                 </section>
             </GikalLayout>
