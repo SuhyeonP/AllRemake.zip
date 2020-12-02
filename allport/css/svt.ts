@@ -19,6 +19,9 @@ export const commonCss=css`
         font-style: normal;
     }
     
+    header {
+        height: 16vh;
+    }
     @media (min-width: 1024px) {
         header h2 {
             font-size: 42px!important;
@@ -91,6 +94,20 @@ export const commonCss=css`
         .mini-text{
             font-size: 32px;
             margin-bottom:2vh;
+        }
+        .one-show{
+          
+          & img {
+            margin-top:10%;
+            max-height: 60vh;
+          }
+        }
+        .slick-img{
+          height: calc(100% - 44px);
+          background: #090909;
+          img{  
+            width:65vw;
+          }
         }
     }
     
@@ -324,9 +341,6 @@ export const commonCss=css`
         font-size: 31px;
         text-shadow: 3px 2px 6px #F7CAC9;
     }
-    header {
-        height: 16vh;
-    }
     section {
         min-height: 74vh;
         padding-bottom: 1vh;
@@ -552,6 +566,7 @@ export const goings=css`
                 margin-bottom:17px;
             }
         }
+        
     }
     @media(min-width:678px){
         li{
@@ -589,5 +604,188 @@ export const PGnow=styled.button`
     border:1px;
     &:active,&:focus{
         outline:0;
+    }
+`;
+export const onlyImg2 = css`
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:100vw;
+  height:100vh;
+  
+  .slick-header{
+      height: 44px;
+      background: #e0e3da;
+      position: relative;
+      padding: 0;
+      text-align: center;
+      
+      & h1 {
+        margin: 0;
+        font-size: 17px;
+        color: #333;
+        line-height: 44px;
+      }
+      .closeBtn{
+        top: 12px;
+        right: 35px;
+        color: white;
+        position: absolute;
+        cursor: pointer;
+        text-shadow: 2px 1px 5px black;
+      }
+  }
+  .slick-img{
+      height: calc(100% - 44px);
+      background: #090909;
+      img{  
+        width:80vw;
+      }
+  }
+  .one-show{
+      text-align: center;
+      
+      & img {
+        max-height: 60vh;
+      }
+  }
+  .slick-slide {
+    display: inline-block;
+    width:100vw;
+    padding:0;
+  }
+`;
+export const goingDetail=css`
+    .going-title{
+        display: block;
+        text-align: center;
+        font-family: 'Recipekorea';
+        color: #2d2d2dc7;
+    }
+    .going-explain{
+        display: block;
+        width: 85vw;
+    }
+    .goto-youtube{
+        display: block;
+        text-align: center;
+        color: #6d6d6d;
+        text-decoration: line-through;
+    }
+    .img-zip-zoom{
+        position: relative;
+    }
+    .img-zip-zoom img{
+        display: block;
+        width: 80vw;
+        margin: 10px auto;
+    }
+    .moresee-img{
+        position: absolute;
+        font-weight: 800;
+        bottom: 1vh;
+        left: 27%;
+        background-color: #92a8d140;
+    }
+    .slickwrapper {
+        height: calc(100% - 44px);
+        background: #090909;
+        width:100vw;
+    }
+    .slick-track img{
+        width:60vw!important;
+        height: auto!important;
+    }
+    @media (min-width: 1024px){
+        .going-title{
+            font-size: 32px;
+            padding: 30px 0 12px;
+        }
+        .going-explain{
+            margin:10px auto;
+            line-height: 32px;
+            letter-spacing: 1.8px;
+        }
+        .goto-youtube{
+            font-size: 12px;
+            margin-top: -9px;
+            margin-bottom:20px;
+        }
+        .before-zoom{
+            width: 60vw!important;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+    @media (max-width: 1023px)and (min-width: 678px) {
+        .going-title{
+            font-size: 32px;
+            padding: 30px 0 12px;
+        }
+        .going-explain{
+            margin:10px auto;
+            line-height: 32px;
+            letter-spacing: 1.8px;
+            font-size: 19px;
+        }
+        .goto-youtube{
+            font-size: 12px;
+            margin-top: -9px;
+            margin-bottom:20px;
+        }
+    }
+    @media(min-width:677px){
+        .tab-pc{
+            position: fixed;
+            z-index: 5000;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    
+    }
+    @media (max-width: 677px){
+        .one-show{
+          text-align: center;
+          
+          & img {
+            margin-top:60%;
+            max-height: 60vh;
+          }
+      }
+    
+        .slickwrapper>div{
+            height: 100%;
+            padding: 13vh 2vw 3vh;
+        }
+        .slick-track{
+            height: 100%;
+            padding-bottom:4vh;
+        }
+        .slick-track img{
+    
+            width:80vw!important;
+            height: auto!important;
+        }
+        .going-title{
+            font-size: 19px;
+            padding: 10px 0;
+        }
+        .going-explain{
+            width:72vw;
+            margin:10px auto;
+        }
+        .goto-youtube{
+            font-size: 12px;
+            margin-top: -5px;
+        }
+        .none-ground{
+            height: 30vh;
+            margin: 10px 0;
+        }
     }
 `;

@@ -38,4 +38,19 @@ router.get('/goings',async(req,res,next)=>{
     })
 })
 
+router.get('/going/:gid',async(req,res,next)=>{
+    const gid=Number(req.params.gid)
+    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE id=${gid}`,function(err,rows){
+        if(!err){
+            connection.query(`SELECT * FROM REACT_SVT_IMAGE WHERE gid=${gid}`,function(error,row){
+                if(!error){
+                    return res.status(200).json({row,rows})
+                }
+            })
+        }else{
+            return res.status(404).send('error')
+        }
+    })
+})
+
 module.exports = router;
