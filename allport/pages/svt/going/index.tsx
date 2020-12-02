@@ -1,17 +1,34 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import SVTAppLayout from "../../../component/svt/layout";
 import axios from "axios";
 import {baseURL} from "../../../config/config";
 import Goings from "../../../component/svt/goings";
 import {css} from "@emotion/css";
 import {goings} from "../../../css/svt";
+import PagingBtn from "../../../component/svt/pagingBtn";
 
 const GoingSvt=({data})=>{
 
-    const [goingArr,setGoingArr]=useState(data)
+    const [goingArr,setGoingArr]=useState(data.rows);
+    const gLength=data.row.length;
+    const pgLength=Math.ceil(gLength/3)
+    const [current,setCurrent]=useState(1)
+    const [pgArr,setPgArr]=useState<number[]>([])
+
+    const gotoP=useCallback(async(pgNum)=>{
+        setCurrent(pgNum)
+        const getGoing=await axios.get(baseURL+"/svt/goings?lastId="+pgArr[pgNum-1])
+        const changeArr=await getGoing.data;
+        setGoingArr(changeArr.rows)
+    },[])
 
     useEffect(()=>{
-        console.log(goingArr)
+        for(let i=0;i<pgLength;i++){
+            setPgArr(prevState => {
+                prevState[i]=(i*3)
+                return prevState
+            })
+        }
     },[])
 
     return(
@@ -20,6 +37,7 @@ const GoingSvt=({data})=>{
             <ul className={css(goings)}>
                 {goingArr.map((x,y)=><Goings key={y} going={x}/>)}
             </ul>
+            <PagingBtn current={current} pgLength={pgLength} gotoP={gotoP}/>
         </SVTAppLayout>
     )
 }

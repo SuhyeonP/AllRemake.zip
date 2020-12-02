@@ -336,7 +336,7 @@ export const commonCss=css`
         display: block;
         font-size: 19px;
         font-family: 'Recipekorea';
-        padding-top: 3vh;
+        padding: 2vh 0;
     }
     
     
@@ -529,25 +529,65 @@ export const commonCss=css`
     }
 `;
 export const goings=css`
-    margin:0 auto;
+    display:block;
+    text-align:center;
     li{
         a{
             display:inline-block;
         }
+        h3{
+            padding-bottom:4px;
+        }
     }
     @media(max-width:677px){
-        width:80vw;
-        margin:0 auto;
         li{
+            h3{
+            font-size:17px;
+            }
             display:block;
             text-align:center;
-            padding:10px 0;
+            padding:25px 0;
             img{
-                width:79%;
+                width:65%;
+                margin-bottom:17px;
             }
         }
     }
     @media(min-width:678px){
-    
+        li{
+            display:block;
+            text-align:center;
+            padding:25px 0;
+            img{
+                width:35vw;
+                margin-bottom:10px;
+            }
+        }
+    }
+`;
+
+export const pageBtn=css`
+    display:block;
+    text-align:center;
+    ul{
+        display:inline-flex;
+        li{
+            -webkit-writing-mode: vertical-lr;
+            display:inline-block;
+            button{
+                width:23px;
+                height:23px;
+            }
+        }
+    }
+`;
+
+export const PGnow=styled.button`
+    background-color:${props=>props.color||"white"};
+    width:23px;
+    height:23px;
+    border:1px;
+    &:active,&:focus{
+        outline:0;
     }
 `;

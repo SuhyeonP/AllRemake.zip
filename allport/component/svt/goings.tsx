@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import Link from "next/link";
 import {baseURL} from "../../config/config";
 
@@ -18,4 +18,4 @@ const Goings=({going})=>{
     )
 }
 
-export default Goings;
+export default memo(Goings);

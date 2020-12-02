@@ -25,9 +25,13 @@ router.get('/member/:member',async(req,res,next)=>{
 
 router.get('/goings',async(req,res,next)=>{
     const lastId=Number(req.query.lastId)
-    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE dayid>${lastId} ORDER BY dayid DESC LIMIT 3`,function(err,rows,fields){
+    await connection.query(`SELECT * FROM REACT_SVT_GOING WHERE dayid>${lastId} ORDER BY dayid ASC LIMIT 3`,function(err,rows,fields){
        if(!err){
-           return res.status(200).json(rows)
+           connection.query(`SELECT dayid FROM REACT_SVT_GOING ORDER BY dayid DESC`,function(error,row,filed){
+               if(!error){
+                   return res.status(200).json({rows,row})
+               }
+           })
        } else{
            return res.status(404).send('hi')
        }
