@@ -15,6 +15,7 @@ const lolRouter=require('./routes/lol');
 const baedalRouter=require('./routes/baedal');
 const gikalRouter=require('./routes/gikal');
 const cafeRouter=require('./routes/cafe');
+const svtRouter=require('./routes/seventeen');
 connection.query("set session character_set_connection=utf8;");
 connection.query("set session character_set_results=utf8;");
 connection.query("set session character_set_client=utf8;");
@@ -26,6 +27,7 @@ app.use(cors({
     credentials: true,
 }));
 app.use('/', express.static(path.join(__dirname, 'img')));
+app.use('/svt', express.static(path.join(__dirname, 'seventeen')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -45,6 +47,7 @@ app.use('/lol',lolRouter);
 app.use('/gikal',gikalRouter);
 app.use('/baedal',baedalRouter);
 app.use('/cafe',cafeRouter);
+app.use('/svt',svtRouter);
 
 app.listen(3065, () => {
     console.log('서버 실행 중!');
