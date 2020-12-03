@@ -3,6 +3,24 @@ import {css} from "@emotion/react";
 export const test=css`
     display:table;
     height:100vh;
+    .main-tap{
+        text-align:center;
+        display:block;
+        p{
+            display:inline-block;
+            text-decoration:underline;
+            padding-bottom:12px;
+            &:hover{
+                transform:scale(1.2);
+            }
+        }
+    }
+    .help-change,.click-me{
+        display:block;
+        color:white;
+        text-align:center;
+        text-shadow:1px 1px 1px black;
+    }
     .baemin{
         display:table-cell;
         width:100vw;
