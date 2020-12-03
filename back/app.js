@@ -28,6 +28,8 @@ app.use(cors({
 }));
 app.use('/', express.static(path.join(__dirname, 'img')));
 app.use('/svt', express.static(path.join(__dirname, 'seventeen')));
+app.use('/gik/resources/img/char', express.static(path.join(__dirname, 'gikal')));
+app.use('/gik/resources/img/que', express.static(path.join(__dirname, 'gikalq')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));

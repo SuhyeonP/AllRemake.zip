@@ -1,6 +1,6 @@
 export const baseURL='http://localhost:3065'
 //export const baseURL='http://localhost:3065'
-export const gikalURL='http://ahah12k.cafe24.com/ptp2'
+export const gikalURL='http://localhost:3065/gik'
 export const cafeURL='http://ahah12k.cafe24.com/jin'
 export const youTubeLink='https://www.youtube.com/watch?v='
 export const youTubeFrame='https://www.youtube.com/embed/'

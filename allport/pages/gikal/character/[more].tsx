@@ -27,7 +27,6 @@ const GikalEnd = (data) => {
     const [nextLink,setNextLink]=useState('/')
 
     useEffect(()=>{
-        console.log(cnn)
         if(cnn===1){
             setNext(true)
             setNextLink('/gikal/character/'+Number(cnn+1))
