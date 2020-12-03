@@ -1,4 +1,4 @@
-export const baseURL='http://localhost:3065'
+export const baseURL='http://3.35.48.34'
 //export const baseURL='http://localhost:3065'
 export const gikalURL='http://localhost:3065/gik'
 export const cafeURL='http://ahah12k.cafe24.com/jin'
