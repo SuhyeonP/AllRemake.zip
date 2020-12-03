@@ -12,7 +12,7 @@ const OrderReceipt=({orders})=>{
             const data=await postOrder.data
             console.log(data)
             if(data==='success'){
-                await router.push('/baedal')
+                await router.push('/baedal/plz')
             }
         }else{
             return;
