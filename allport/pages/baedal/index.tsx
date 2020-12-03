@@ -115,11 +115,11 @@ function BadalMain ({data}) {
 export default BadalMain;
 
 export async function getStaticProps(context) {
-    const cookie = context.req ? context.req.headers.cookie : '';
-    axios.defaults.headers.Cookie = '';
-    if (context.req && cookie) {
-        axios.defaults.headers.Cookie = cookie;
-    }
+    // const cookie = context.req ? context.req.headers.cookie : '';
+    // axios.defaults.headers.Cookie = '';
+    // if (context.req && cookie) {
+    //     axios.defaults.headers.Cookie = cookie;
+    // }
     const res=await axios.get(baseURL+"/baedal/shopper/login?shopId="+6);
     const data=await res.data
     return {

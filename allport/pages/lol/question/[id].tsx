@@ -17,7 +17,7 @@ const SelectZoneLOL=(data)=>{
     const loaad=useCallback(()=>{
         if(pN===8){
             alert('React와 Next로는 결과를 내기 어려운구조입니다.실제페이지로 돌아갑니다.')
-            router.push('/');
+            return window.location.href="http://ahah12k.cafe24.com/ptp1/"
         }else{
             window.location.href="/lol/question/"+pN;
         }
@@ -25,7 +25,7 @@ const SelectZoneLOL=(data)=>{
 
     const loaad2=useCallback(()=>{
         if(pN===8){
-            alert('React와 Next로는 결과를 내기 어려운구조입니다.실제페이지로 돌아갑니다.')
+            alert('React와 Next로는 결과를 내기 어려운구조입니다.홈으로 돌아갑니다.')
             router.push('/');
         }else{
             window.location.href="/lol/question/"+pN;

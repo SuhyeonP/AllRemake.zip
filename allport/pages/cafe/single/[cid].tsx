@@ -19,7 +19,6 @@ const SingleCafe=(props)=>{
         setImgInfo(props.data.rows3)
         setMenuInfo(props.data.rows2)
         setCafeInfo(props.data.rows1[0])
-        console.log(menuInfo)
     },[props])
 
     if(props.data.rows1.length===0){//없는페이지
