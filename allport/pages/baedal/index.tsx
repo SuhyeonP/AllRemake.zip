@@ -64,7 +64,7 @@ function BadalMain ({data}) {
         await alert(data)
     },[])
     const reloadOrder=useCallback(()=>{
-        router.push('/baedal')
+        router.reload()
     },[])
 
     return (
