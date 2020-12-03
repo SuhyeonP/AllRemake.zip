@@ -23,7 +23,7 @@ connection.query("set session character_set_client=utf8;");
 
 app.use(morgan('dev'))
 app.use(cors({
-    origin: ['http://localhost:3000','http://suhyeon.shop','http://3.35.217.72'],
+    origin: ['http://localhost:3000','http://suhyeon.shop'],
     credentials: true,
 }));
 app.use('/', express.static(path.join(__dirname, 'img')));
