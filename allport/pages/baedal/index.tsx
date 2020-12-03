@@ -12,7 +12,8 @@ function BadalMain ({data}) {
         <div className={css(test)}>
             <AllMenu/>
             <div className="baemin">
-                <Link href="/baedal/plz"><a>goto order</a></Link>
+                <Link href="/baedal/plz"><a className="main-tap"><p>goto order</p></a></Link>
+                <p className="click-me">click this 🔼</p>
             </div>
         </div>
     )
