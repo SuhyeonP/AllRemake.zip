@@ -60,8 +60,8 @@ function BadalMain ({data}) {
 
     const postOrder=useCallback(async (count:number)=>{
         const res=await axios.post(baseURL+"/baedal/inOrder?menu="+menus[count].name+"&price="+menus[count].price)
-        const data=res.data
-        alert(data)
+        const data=await res.data
+        await alert(data)
     },[])
     const reloadOrder=useCallback(()=>{
         router.push('/baedal')
