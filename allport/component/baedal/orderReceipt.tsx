@@ -9,7 +9,7 @@ const OrderReceipt=({orders})=>{
         const yon=confirm(`${orders.menus} right?`)
         if(yon){
             const postOrder=await axios.get(baseURL+'/baedal/checkOrder/'+orderId);
-            const data=postOrder.data
+            const data=await postOrder.data
             console.log(data)
             if(data==='success'){
                 router.push('/baedal')
