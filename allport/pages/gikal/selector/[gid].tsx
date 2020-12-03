@@ -25,11 +25,9 @@ const SelectZoneGikal=(data)=>{
         setAnswer1(data.props.answer[0].ANS_CONT)
         setAnswer2(data.props.answer[1].ANS_CONT)
         setGikalImg(gikalURL+data.props.question[0].QUE_IMG)
-        console.log(data)
     },[data])
 
     const gotoS=useCallback((selectNumber)=>{
-        console.log(selectNumber,cnn)
         let t=cnn;
         if(selectNumber===0){
             if(sn===1){

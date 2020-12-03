@@ -5,9 +5,7 @@ import {baseURL} from "../../../config/config";
 
 const MID=({data})=>{
     const memberData=data[0]
-    useEffect(()=>{
-        console.log(memberData)
-    },[])
+
 
     return(
         <SVTAppLayout>

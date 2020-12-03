@@ -19,8 +19,6 @@ const SelectZoneGikal=(data)=>{
 
     const router=useRouter()
     useEffect(()=>{
-        console.log(data)
-        console.log(data.props.breath[0])
         setBreath(data.props.breath[0].BREATH_NM)
         setColor(data.props.breath[0].color)
         setExplain(data.props.character[0].CHAR_EXP)
