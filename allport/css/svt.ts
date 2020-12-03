@@ -667,7 +667,6 @@ export const goingDetail=css`
     }
     .going-explain{
         display: block;
-        width: 85vw;
     }
     .goto-youtube{
         display: block;
@@ -705,6 +704,7 @@ export const goingDetail=css`
             padding: 30px 0 12px;
         }
         .going-explain{
+            width: 65vw;
             margin:10px auto;
             line-height: 32px;
             letter-spacing: 1.8px;
@@ -730,6 +730,7 @@ export const goingDetail=css`
             line-height: 32px;
             letter-spacing: 1.8px;
             font-size: 19px;
+            width: 75vw;
         }
         .goto-youtube{
             font-size: 12px;
@@ -786,6 +787,43 @@ export const goingDetail=css`
         .none-ground{
             height: 30vh;
             margin: 10px 0;
+        }
+    }
+`;
+
+export const openYoutubecss=css`
+    display:block;
+    text-align:center;
+    button{
+        margin:15px 0;
+        &:focus{
+            outline:0;
+        }
+        background-color:#fffff3;
+        border:1px solid pink;
+    }
+    .youtube-iframe{
+        display:none;
+        iframe{
+            width:70vw;
+            display:inline-block;
+        }
+    }
+    
+    @media (max-width:677px){
+       .youtube-iframe{
+           
+        }
+    }
+    
+    @media (min-width:678px){
+        .youtube-iframe{
+            height:50vh;
+            iframe{
+                width:500px;
+                height:300px;
+                display:inline-block;
+            }
         }
     }
 `;

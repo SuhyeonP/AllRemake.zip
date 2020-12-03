@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import Link from "next/link";
 import SVTAppLayout from "../../../component/svt/layout";
 import ImageG from "../../../component/svt/goingImg";
 import axios from "axios";
-import {baseURL} from "../../../config/config";
+import {baseURL, youTubeFrame, youTubeLink} from "../../../config/config";
 import {css} from "@emotion/css";
-import {goingDetail} from "../../../css/svt";
+import {goingDetail, openYoutubecss} from "../../../css/svt";
 import Head from "next/head";
 
 const noImg=[{src:'goingtest.png'}];
@@ -16,10 +16,28 @@ const GoingSeven = (props) => {
     let setDate = new Date(goingInfo.dday)
     let theDay = setDate.toLocaleDateString()
     let realDay = theDay.slice(0, theDay.length - 1)
+    const [youT,setYouT]=useState(true);
+
+
     useEffect(() => {
         setGoingInfo(props.data.rows[0])
         setImgArr(props.data.row)
     }, [props])
+
+    const openYoutube=useCallback(()=>{
+        const btn=document.getElementById('youtubeBtn')
+        const iF=document.getElementById('youtube-zone')
+
+        if(youT){
+            iF.style.display='block';
+            btn.innerText='유트브 닫기'
+            setYouT(false)
+        }else{
+            iF.style.display='none';
+            btn.innerText='유트브 열기'
+            setYouT(true)
+        }
+    },[youT])
 
 
     return (
@@ -29,13 +47,24 @@ const GoingSeven = (props) => {
             </Head>
             <SVTAppLayout>
                 <div className={css(goingDetail)}>
-                    <a className="going-title" href={goingInfo.link} target="_blank" rel="noopener noreferrer">
+                    <a className="going-title" href={youTubeLink+goingInfo.link} target="_blank" rel="noopener noreferrer">
                         {goingInfo.title}
                     </a>
                     {imgArr.length !== 0 && <ImageG images={imgArr}/>}
                     {imgArr.length === 0 && <ImageG images={noImg}/>}
                     <p className="goto-youtube">제목을 클릭하면 유튜브로 가져용!</p>
+                    <p className="going-explain">{realDay}</p>
                     <p className="going-explain">{goingInfo.explain}</p>
+                </div>
+                <div className={css(openYoutubecss)}>
+                    <button type="button" id="youtubeBtn" onClick={openYoutube}>유튜브 바로보기</button>
+                    <div className="youtube-iframe" id="youtube-zone">
+                        <iframe src={youTubeFrame+goingInfo.link}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen>
+                        </iframe>
+                    </div>
                 </div>
             </SVTAppLayout>
         </>

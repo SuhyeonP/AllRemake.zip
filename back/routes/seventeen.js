@@ -53,4 +53,15 @@ router.get('/going/:gid',async(req,res,next)=>{
     })
 })
 
+router.get('/albums',async(req,res,next)=>{
+    await connection.query('SELECT * FROM REACT_SVT_ALBUM',function(err,rows){
+        if(!err){
+            return res.status(200).json(rows)
+        }else{
+            return res.status(400).send('error')
+        }
+    })
+})
+
+
 module.exports = router;
