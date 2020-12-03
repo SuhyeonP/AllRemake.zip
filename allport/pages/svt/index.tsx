@@ -7,9 +7,6 @@ const SVTMain=()=>{
         <SVTAppLayout>
             <ul className="main-list" >
                 <li>
-                    <Link href="/svt/aboutSeven"><a>About Seventeen</a></Link>
-                </li>
-                <li>
                     <Link href="/svt/member"><a>Member</a></Link>
                 </li>
                 <li>
