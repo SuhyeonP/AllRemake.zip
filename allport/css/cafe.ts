@@ -209,6 +209,8 @@ export const cafeItem=css`
             display:inline-flex;
             background-color:#3d3d3dab;
             z-index:12;
+            font-size:14px;
+            -webkit-border-top-left-radius : 15px;
             .insta-small{
                 padding-top:2px;
                 font-family: 'MaruBuri-Regular';
@@ -246,7 +248,7 @@ export const cafeItem=css`
                 width:26vw;
             }
             .cafe-exp{
-                bottom: 38px;
+                bottom: 15px;
                 right: 0;
             }
             .insta-small{

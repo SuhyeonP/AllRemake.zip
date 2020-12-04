@@ -585,7 +585,7 @@ export const pageBtn=css`
     display:block;
     text-align:center;
     ul{
-        display:inline-flex;
+        font-size:0;
         li{
             -webkit-writing-mode: vertical-lr;
             display:inline-block;
