@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Slick from 'react-slick';
 import {css} from "@emotion/css";
-import {baseURL} from "../../config/config";
+import {baseURL, s3URL} from "../../config/config";
 import {onlyImg2} from "../../css/svt";
 
 const SVTImg = ({images, onClose}) => {
@@ -23,7 +23,7 @@ const SVTImg = ({images, onClose}) => {
                 >
                     {images.map((x,ind)=>(
                         <div className="one-show" key={ind}>
-                            <img src={baseURL+"/svt/" + x.src}/>
+                            <img src={s3URL+"/svt/" + x.src}/>
                         </div>
                     ))}
                 </Slick>

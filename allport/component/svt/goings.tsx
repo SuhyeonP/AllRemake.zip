@@ -1,6 +1,6 @@
 import React, {memo} from "react";
 import Link from "next/link";
-import {baseURL} from "../../config/config";
+import {baseURL, s3URL} from "../../config/config";
 
 const Goings=({going})=>{
     let setDate=new Date(going.dday)
@@ -9,8 +9,8 @@ const Goings=({going})=>{
     return(
         <li>
             <Link href={"/svt/going/"+going.id}><a>
-                {going.prevImg&&<img src={baseURL+going.prevImg}/>}
-                {!going.prevImg&&<img src={baseURL+"/svt/goingtest.png"}/>}
+                {going.prevImg&&<img src={s3URL+going.prevImg}/>}
+                {!going.prevImg&&<img src={s3URL+"/svt/goingtest.png"}/>}
                 <h3>{going.title}</h3>
                 <p>{realDay}</p>
             </a></Link>

@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {baseURL} from "../../config/config";
+import {baseURL, s3URL} from "../../config/config";
 import SVTImg from "./slickI";
 
 
@@ -25,7 +25,7 @@ const ImageG= ({images}) => {
             <div className="going-detail">
                 {showImagesZoom && <SVTImg images={images} onClose={onClose}/>}
                 <div className="img-zip-zoom">
-                    <img className="before-zoom" src={baseURL + "/svt/" + images[0].src} alt={baseURL + "/svt/" + images[0].src}
+                    <img className="before-zoom" src={s3URL + "/svt/" + images[0].src} alt={s3URL + "/svt/" + images[0].src}
                          width="50%" onClick={onZoom}/>
                     {len&&<div role="presentation"
                                style={{display: 'inline-block', width: '50%', textAlign: 'center', verticalAlign: 'middle'}}

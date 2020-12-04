@@ -1,6 +1,7 @@
 export const baseURL='http://api.suhyeon.shop'
 //export const baseURL='http://localhost:3065'
-export const gikalURL='http://api.suhyeon.shop/gik'
+export const gikalURL='https://suhyeonallzip.s3.ap-northeast-2.amazonaws.com'
+export const s3URL='https://suhyeonallzip.s3.ap-northeast-2.amazonaws.com'
 export const cafeURL='http://ahah12k.cafe24.com/jin'
 export const youTubeLink='https://www.youtube.com/watch?v='
 export const youTubeFrame='https://www.youtube.com/embed/'
