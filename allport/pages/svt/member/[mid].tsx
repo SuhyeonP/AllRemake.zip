@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import SVTAppLayout from "../../../component/svt/layout";
 import axios from "axios";
-import {baseURL} from "../../../config/config";
+import {baseURL, s3URL} from "../../../config/config";
 
 const MID=({data})=>{
     const memberData=data[0]
@@ -12,7 +12,7 @@ const MID=({data})=>{
             <div className="member-section">
                 <>
                     <h2>{memberData.name}</h2>
-                    <img src={baseURL+memberData.src} className="member-img"/>
+                    <img src={s3URL+memberData.src} className="member-img"/>
                     <table>
                         <thead></thead>
                         <tbody>
