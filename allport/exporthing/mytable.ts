@@ -7,5 +7,5 @@ export const myt=[
     {id:6,developing:false,explain:"CAF(React)",link:"/cafe",local:true},
     {id:7,developing:false,explain:"CAF(Spring)",link:"http://ahah12k.cafe24.com/jin",local:false},
     {id:8,developing:false,explain:"Seventeen",link:"/svt",local:true},
-    {id:9,developing:false,explain:"Treat Data",link:"http://data.honeyhyoni.shop/",local:false},
+    // {id:9,developing:false,explain:"Treat Data",link:"http://data.honeyhyoni.shop/",local:false},
 ]
