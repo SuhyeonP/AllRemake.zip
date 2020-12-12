@@ -6,7 +6,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import axios from "axios";
 import {baseURL} from "../../../config/config";
 import {useRouter} from "next/router";
-
+const alphabet=['a','b','c','d','e','f','g'];
 const SelectZoneLOL=(data)=>{
 
     const question=useState(data.props.data[0].QUE_CONT)
@@ -14,23 +14,51 @@ const SelectZoneLOL=(data)=>{
     const answer2=data.props.data1[1].ANS_CONT
     const router=useRouter()
     const pN=Number(router.query.id)+1;
+
+    useEffect(()=>{
+        if(pN===2){
+            sessionStorage.removeItem('select')
+        }
+    })
+
     const loaad=useCallback(()=>{
+        let result=sessionStorage.getItem('select')
+
         if(pN===8){
+            sessionStorage.setItem('select',result+alphabet[pN-2].toUpperCase())
+            let makeAnswer=sessionStorage.getItem('select');
             alert('React와 Next로는 결과를 내기 어려운구조입니다.실제페이지로 돌아갑니다.')
             return window.location.href="http://ahah12k.cafe24.com/ptp1/"
         }else{
-            window.location.href="/lol/question/"+pN;
+            if(result===null){
+                sessionStorage.setItem('select',alphabet[pN-2].toUpperCase())
+            }else{
+                sessionStorage.setItem('select',result+alphabet[pN-2].toUpperCase())
+            }
+            //window.location.href="/lol/question/"+pN;
+            console.log(alphabet[pN-2].toUpperCase())
+            router.push("/lol/question/"+pN)
         }
-    },[])
+    },[pN])
 
     const loaad2=useCallback(()=>{
+        let result=sessionStorage.getItem('select')
         if(pN===8){
+            sessionStorage.setItem('select',result+alphabet[pN-2])
+            let makeAnswer=sessionStorage.getItem('select');
             alert('React와 Next로는 결과를 내기 어려운구조입니다.홈으로 돌아갑니다.')
             router.push('/');
         }else{
-            window.location.href="/lol/question/"+pN;
+            if(result===null){
+                sessionStorage.setItem('select',alphabet[pN-2])
+            }else{
+                sessionStorage.setItem('select',result+alphabet[pN-2])
+            }
+            // window.location.href="/lol/question/"+pN;
+            console.log(alphabet[pN-2])
+            router.push("/lol/question/"+pN)
         }
-    },[])
+    },[pN])
 
     return (
         <>
