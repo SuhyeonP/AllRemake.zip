@@ -9,7 +9,7 @@ import {useRouter} from "next/router";
 const alphabet=['a','b','c','d','e','f','g'];
 const SelectZoneLOL=(data)=>{
 
-    const question=useState(data.props.data[0].QUE_CONT)
+    const question=(data.props.data[0].QUE_CONT)
     const answer=data.props.data1[0].ANS_CONT
     const answer2=data.props.data1[1].ANS_CONT
     const router=useRouter()
@@ -19,16 +19,27 @@ const SelectZoneLOL=(data)=>{
         if(pN===2){
             sessionStorage.removeItem('select')
         }
-    })
+    },[])
 
-    const loaad=useCallback(()=>{
+    const loaad=useCallback(async()=>{
         let result=sessionStorage.getItem('select')
 
         if(pN===8){
-            sessionStorage.setItem('select',result+alphabet[pN-2].toUpperCase())
-            let makeAnswer=sessionStorage.getItem('select');
-            alert('React와 Next로는 결과를 내기 어려운구조입니다.실제페이지로 돌아갑니다.')
-            return window.location.href="http://ahah12k.cafe24.com/ptp1/"
+            sessionStorage.setItem('select',result+alphabet[pN-2])
+            let theChampion1=await axios.get(baseURL+"/lol/result/"+sessionStorage.getItem('select'))
+            let theResult1=await theChampion1.data;
+            if(theResult1.length!==0){
+                await alert("챔피언 : "+theResult1[0].CHAMP_NM+" 난이도 : "+theResult1[0].CHAMP_EASY)
+            }else{
+                alert('아직 맞는 캐릭터가 없네요 ㅠㅠ')
+            }
+            let goReal=confirm('결과화면을 보고싶나요?')
+            if(goReal){
+                alert('moving')
+                return window.location.href="http://ahah12k.cafe24.com/ptp1/"
+            }else{
+                router.push('/');
+            }
         }else{
             if(result===null){
                 sessionStorage.setItem('select',alphabet[pN-2].toUpperCase())
@@ -36,18 +47,31 @@ const SelectZoneLOL=(data)=>{
                 sessionStorage.setItem('select',result+alphabet[pN-2].toUpperCase())
             }
             //window.location.href="/lol/question/"+pN;
-            console.log(alphabet[pN-2].toUpperCase())
             router.push("/lol/question/"+pN)
         }
     },[pN])
 
-    const loaad2=useCallback(()=>{
+    const loaad2=useCallback(async()=>{
         let result=sessionStorage.getItem('select')
         if(pN===8){
-            sessionStorage.setItem('select',result+alphabet[pN-2])
+            sessionStorage.setItem('select',result+alphabet[pN-2].toUpperCase())
             let makeAnswer=sessionStorage.getItem('select');
-            alert('React와 Next로는 결과를 내기 어려운구조입니다.홈으로 돌아갑니다.')
-            router.push('/');
+            let theChampion=await axios.get(baseURL+"/lol/result/"+makeAnswer)
+            let theResult=await theChampion.data;
+            if(theResult.length!==0){
+               alert("챔피언 : "+theResult[0].CHAMP_NM+" 난이도 : "+theResult[0].CHAMP_EASY)
+            }else{
+                alert('아직 맞는 캐릭터가 없네요 ㅠㅠ')
+            }
+            let goReal=confirm('결과화면을 보고싶나요?')
+            if(goReal){
+                alert('moving')
+                return window.location.href="http://ahah12k.cafe24.com/ptp1/"
+            }else{
+                router.push('/');
+            }
+            //alert('React와 Next로는 결과를 내기 어려운구조입니다.홈으로 돌아갑니다.')
+            //router.push('/');
         }else{
             if(result===null){
                 sessionStorage.setItem('select',alphabet[pN-2])
@@ -55,7 +79,6 @@ const SelectZoneLOL=(data)=>{
                 sessionStorage.setItem('select',result+alphabet[pN-2])
             }
             // window.location.href="/lol/question/"+pN;
-            console.log(alphabet[pN-2])
             router.push("/lol/question/"+pN)
         }
     },[pN])
