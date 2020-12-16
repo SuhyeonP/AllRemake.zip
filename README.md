@@ -12,4 +12,4 @@ spring으로 만들었던 페이지들의 remake(ts ver.)
 감사합니다.       
            
 
-[![HitCount](http://hits.dwyl.com/suhyeonP/Allremake.svg)](http://hits.dwyl.com/suhyeonP/Allremake)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FSuhyeonP%2FAllRemake.zip&count_bg=%238E60F9&title_bg=%235E86FF&icon=&icon_color=%23E7E7E7&title=Visitor&edge_flat=true)](https://hits.seeyoufarm.com)
