@@ -9,6 +9,6 @@ spring으로 만들었던 페이지들의 remake(ts ver.)
 기존 만들던 [짝퉁 배달의 민족](https://github.com/SuhyeonP/Serverside-Type-Next) 의 경우 dev로는 실행되지만 빌드과정의 오류를
 해결하여, 이 프로젝트에 적용해 두었습니다. 
 
-감사합니다.
+감사합니다.       
            
-[![HitCount](http://hits.dwyl.com/suhyeonP/trello.svg)](http://hits.dwyl.com/suhyeonP/AllRemake)
+           [![HitCount](http://hits.dwyl.com/suhyeonP/Allremake.svg)](http://hits.dwyl.com/suhyeonP/Allremake)
