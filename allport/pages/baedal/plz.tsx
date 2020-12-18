@@ -107,6 +107,8 @@ function BadalMain ({data}) {
                         <ul>
                             {data.map((ele)=><OrderReceipt key={ele.id} orders={ele}/>)}
                         </ul>
+                        <br />
+                        <p>click "not yet"</p>
                     </div>}
                 </div>}
             </div>

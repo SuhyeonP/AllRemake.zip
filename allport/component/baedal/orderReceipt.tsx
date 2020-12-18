@@ -23,7 +23,7 @@ const OrderReceipt=({orders})=>{
         <li className="order-item">
             <p>{orders.menus}</p>
             <p>{orders.price}원</p>
-            {orders.orderSuccess===1?<p>checked</p>:<p onClick={()=>checkOrder(orders.id)}>not yet</p>}
+            {orders.orderSuccess===1?<p>checked</p>:<p className="youcanClick" onClick={()=>checkOrder(orders.id)}>not yet</p>}
         </li>
     )
 }

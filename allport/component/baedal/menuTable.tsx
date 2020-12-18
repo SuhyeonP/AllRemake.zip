@@ -16,7 +16,7 @@ const MenuTable=({Menu,postOrder,setImgSrc,imgSrc})=>{
             <td onMouseOver={changeImage} onMouseOut={removeImg}>{Menu.name}</td>
             <td>{Menu.price}</td>
             <th>&nbsp;</th>
-            <td onClick={()=>postOrder(Menu.id)}>Send Order</td>
+            <td className="youcanClick" onClick={()=>postOrder(Menu.id)}>Send Order</td>
         </tr>
     )
 }

@@ -85,6 +85,9 @@ export const test=css`
             display:inline-flex;
         }
     }
+    .youcanClick{
+        cursor:pointer;
+    }
 `;
 export const changeBtn=css`
     height:32px;
